@@ -1,7 +1,46 @@
-body{
+body {
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box;
 }
+
+/*    ****  STARTING WITH APPLYING RULES FOR SMALL SCREENS*****    */
+
+#boardArea {
+  /*background-color: pink;*/
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+
+
+#gameArea {
+  margin: auto;
+  width: 655px;
+  /*height: 80%;*/
+  /*background-color: yellow;*/
+}
+
+.boxes {
+  cursor: cursor;
+  font-size: 0;
+  background-color: #E0FFFF;
+  width: 205px;
+  height: 205px;
+  transition: .8s;
+
+  border: 1px solid #d3d3d3;
+  display: inline-block;
+  /*float: left;*/
+}
+
+.boxes:hover {
+  background-color: #F5F5F5;
+}
+
 
 
 h1 {
@@ -9,8 +48,39 @@ h1 {
   text-shadow:1px -1px 2px #6e2106;
   font-weight:200;
   letter-spacing:2pt;
-  word-spacing:7pt;
-  font-size:1.6em;
+  word-spacing:5pt;
+  font-size:1em;
   font-family:helvetica, sans-serif;
   padding: 0.5em;
+  margin-top: 1em;
 }
+
+
+#x_dog {
+  display: inline-block;
+  width: 12%;
+  height: 12%;
+}
+
+#o_cat {
+  display: inline-block;
+  width: 10%;
+  height: 10%;
+}
+
+#dogX, #catO {
+  display: inline-block;
+  width: 640px;
+  height: 640px;
+}
+
+
+
+/*@media (max-width: 800px) {
+
+  .boxes {
+    height: 220px;
+    width: 220px;
+    font-size: 1.6em;
+  }
+}*/

@@ -5,36 +5,6 @@ console.log('TIC TAC TOE');
 
 var board = [ ' ', ' ', ' ', ' ', ' ', ' ',' ', ' ', ' '];
 //console.log(board);
-//var board1 = [ '0', '1', '2', '3', '4', '5','6', '7', '8'];
-//var boardLetters = [ 'a', 'b', 'c', 'd', 'e', 'f','g', 'h', 'i'];
-// console.log(boardLetters);
-// console.log(boardLetters[0]);
-
-
-
-//                    ****   WINNING COMBO   ****
-
-var winsRows1 = [board[0], board[1], board[2]];
-var winsRows2 = [board[3], board[4], board[5]];
-var winsRows3 = [board[6], board[7], board[8]];
-//var winsRows = [[board[0], board[1], board[2]], [board[3], board[4], board[5]], [board[6], board[7], board[8]]];
-// console.log(winsRows1); console.log(winsRows2); console.log(winsRows3);
-//console.log(winsRows);
-
-var winsColumns1 = [board[0], board[3], board[6]];
-var winsColumns2 = [board[1], board[4], board[7]];
-var winsColumns3 = [board[2], board[5], board[8]];
-//var winsColumns = [[board[0], board[3], board[6]], [board[1], board[4], board[7]], [board[2], board[5], board[8]]];
-// console.log(winsColumns1); console.log(winsColumns2); console.log(winsColumns3);
-//console.log(winsColumns);
-
-var winsDiagonaL = [board[0], board[4], board[8]];
-var winsDiagonaR = [board[2], board[4], board[6]];
-//var winsDiagona = [[board[0], board[4], board[8]], [board[2], board[4], board[6]]];
-//console.log(winsDiagonaL); console.log(winsDiagonaR);
-//console.log(winsDiagona)
-
-//var winningCombo = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
 
 
@@ -112,16 +82,13 @@ var indexPlayer2 = 4;           // player 2 each choice  -> connect with dom - h
 //var arrayPlayer2 = [];          //store player2 choices
 
 
-// arrayPlayer1.push(indexPlayer1);
-// console.log(arrayPlayer1);
 
 
-
-var chosePosition = function (index,player) {
+var choosePosition = function (index,player) {
 
   var arrayPlayer = [];                                        //store players choices
 
-    for (var round= 0; round < board.length; round++) {
+    for (var round = 0; round < board.length; round++) {
       board[index] = player;                                   //set my board position
         if (board[index] === 'x') {
           arrayPlayer.push(index);
@@ -133,7 +100,7 @@ var chosePosition = function (index,player) {
     }
 }
 
-chosePosition(indexPlayer1, player1);
-chosePosition(indexPlayer2, player2);
+choosePosition(indexPlayer1, player1);
+choosePosition(indexPlayer2, player2);
 
 console.log(board);
