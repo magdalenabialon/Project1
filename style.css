@@ -1,4 +1,16 @@
-h1 {
-  color: cyan;
+body{
+  margin: 0 auto;
   text-align: center;
+}
+
+
+h1 {
+  color: #FFDF00;
+  text-shadow:1px -1px 2px #6e2106;
+  font-weight:200;
+  letter-spacing:2pt;
+  word-spacing:7pt;
+  font-size:1.6em;
+  font-family:helvetica, sans-serif;
+  padding: 0.5em;
 }
