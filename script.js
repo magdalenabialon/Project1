@@ -131,8 +131,8 @@ function buttonClicked(event) {                     // when one of my boxes is c
     scoreX++;
     console.log('The "x" score is: ' + scoreX);
                   //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
-      //$('#gameArea').hide();
-      //$('#winScreen').addClass('dogX');
+      $('#gameArea').hide();
+      $('#winScreen').addClass('dogX');
 
     board = [ '', '', '', '', '', '','', '', '' ];
 
