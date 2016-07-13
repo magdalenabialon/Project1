@@ -6,34 +6,54 @@ body {
 
 /*    ****  STARTING WITH APPLYING RULES FOR SMALL SCREENS*****    */
 
+/*#scrX, #scrY, #boardArea{
+  float: left;
+}*/
+
+#scrX, #scrY {
+  float: left;
+}
+
+
+
+h2 {
+  color: #FFDF00;
+  text-shadow:1px -1px 2px #6e2106;
+  font-weight:100;
+  letter-spacing:2pt;
+  word-spacing:5pt;
+  font-size:1em;
+  font-family:helvetica, sans-serif;
+  padding: 0.5em;
+  margin-top: 3em;
+
+}
+
 #boardArea {
   /*background-color: pink;*/
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  margin-top: 2em;
+  margin-top: 5em;
 }
 
 
 
 #gameArea {
   margin: 0 auto;
-  width: 631px;
-  height: 632px;
+  width: 464px;
+  height: 464px;
   /*border: 0.1em solid #fff7cc;*/
-  border: 0.1em dashed #b8e2fc;
-
-  /*height: 80%;*/
-  /*background-color: yellow;*/
+  /*border: 0.1em solid #b8e2fc;*/
 }
 
 .boxes {
   cursor: cursor;
   font-size: 0;
   background-color: #E0FFFF;
-  width: 205px;
-  height: 205px;
+  width: 150px;
+  height: 150px;
   transition: .8s;
 
   border: 1px solid #d3d3d3;
@@ -42,9 +62,9 @@ body {
 }
 
 .boxes:hover {
-  background-color: #F5F5F5;
+  background-color: #b8e2fc;
+  border: 2em solid grey;
 }
-
 
 
 h1 {
@@ -56,7 +76,7 @@ h1 {
   font-size:1em;
   font-family:helvetica, sans-serif;
   padding: 0.5em;
-  margin-top: 1em;
+  margin-top: 3em;
 }
 
 
@@ -65,16 +85,17 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
-  width: 205px;
-  height: 205px;
+  width: 150px;
+  height: 150px;
 }
 
 #o_cat {
   background-image: url("images/o_.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   display: inline-block;
-  width: 205px;
-  height: 205px;
+  width: 150px;
+  height: 150px;
 }
 
 .dogX, .catO {
@@ -82,11 +103,11 @@ h1 {
   background-size: cover;
   background-position: center;
   display: inline-block;
-  width: 631px;
-  height: 632px;
+  width: 464px;
+  height: 464px;
   text-align: center;
   margin: 0 auto;
-  border: 2px solid grey;
+  border: 1px solid grey;
 }
 
 .catO {
@@ -97,15 +118,20 @@ h1 {
   background-image: url("images/dog_x.jpg");
 }
 
-/*#winScreen{
-  display: none;
-}*/
 
-/*@media (max-width: 800px) {
+@media (max-width: 800px) {
 
-  .boxes {
-    height: 220px;
-    width: 220px;
-    font-size: 1.6em;
+  h1{
+    font-size: 0.8em;
   }
-}*/
+
+  .boxes, #o_cat, #x_dog {
+    height: 100px;
+    width: 100px;
+  }
+  #gameArea, .dogX, .catO  {
+    margin: 0 auto;
+    width: 314px;
+    height: 314px;
+  }
+}
