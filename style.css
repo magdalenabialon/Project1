@@ -11,9 +11,83 @@ body {
 }*/
 
 #scrX, #scrY {
-  float: left;
+   width: 20%;
+   padding: 0;
+   vertical-align: top;
+   display: inline-block;
+   float: left;
+   margin: 0 auto;
+   /*overflow: hidden;*/
 }
 
+#scrX {
+   margin: 0 5px 0 0;
+ }
+
+#scrY {
+   margin: 0 0 0 5px;
+}
+
+
+#gameArea {
+  margin: 1em auto;
+  width: 661px;
+  height: 627px;
+  float: left;
+  display: inline-block;
+  /*border: 0.1em solid #fff7cc;*/
+  /*border: 0.1em solid #b8e2fc;*/
+}
+
+#boardArea {
+  /*display: flex;*/
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 2em;
+  padding: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 1120px;
+}
+
+.boxes {
+  cursor: cursor;
+  font-size: 0;
+  background-color: #E0FFFF;
+  width: 205px;
+  height: 205px;
+  transition: .5s;
+
+  border: 1px solid #d3d3d3;
+  display: inline-block;
+  /*float: left;*/
+}
+
+.boxes:hover {
+  background-color: #98F5FF;
+  border: 2em solid grey;
+}
+
+#clear{
+  clear: both;
+}
+
+h1 {
+  color: #FFDF00;
+  text-shadow: 1px -1px 2px #6e2106;
+  font-weight: 200;
+  letter-spacing: 4pt;
+  word-spacing: 12pt;
+  font-size: 0.6em;
+  font-family: helvetica, sans-serif;
+  padding-top: 1em;
+  /*background-color: #b8e2fc;*/
+  /*border: 1px solid #d3d3d3;*/
+  /*width: 790px;*/
+  text-align: center;
+  margin: 0.5em auto;
+}
 
 
 h2 {
@@ -22,61 +96,19 @@ h2 {
   font-weight:100;
   letter-spacing:2pt;
   word-spacing:5pt;
-  font-size:1em;
+  font-size:1.2em;
   font-family:helvetica, sans-serif;
-  padding: 0.5em;
-  margin-top: 3em;
-
+  margin: 1em auto;
+  /*padding: 0.5em;
+  margin-top: 3em;*/
 }
 
-#boardArea {
-  /*background-color: pink;*/
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  margin-top: 5em;
-}
-
-
-
-#gameArea {
-  margin: 0 auto;
-  width: 464px;
-  height: 464px;
-  /*border: 0.1em solid #fff7cc;*/
-  /*border: 0.1em solid #b8e2fc;*/
-}
-
-.boxes {
-  cursor: cursor;
-  font-size: 0;
-  background-color: #E0FFFF;
-  width: 150px;
-  height: 150px;
-  transition: .8s;
-
-  border: 1px solid #d3d3d3;
-  display: inline-block;
-  /*float: left;*/
-}
-
-.boxes:hover {
-  background-color: #b8e2fc;
-  border: 2em solid grey;
-}
-
-
-h1 {
-  color: #FFDF00;
-  text-shadow:1px -1px 2px #6e2106;
-  font-weight:200;
+h3{
+  font-size: 0.7em;
+  color: #05EDFF;
   letter-spacing:2pt;
   word-spacing:5pt;
-  font-size:1em;
   font-family:helvetica, sans-serif;
-  padding: 0.5em;
-  margin-top: 3em;
 }
 
 
@@ -85,8 +117,8 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 205px;
+  height: 205px;
 }
 
 #o_cat {
@@ -94,20 +126,20 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 205px;
+  height: 205px;
 }
 
 .dogX, .catO {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: inline-block;
-  width: 464px;
-  height: 464px;
-  text-align: center;
-  margin: 0 auto;
+  /*display: inline-block;*/
+  width: 658px;
+  height: 627px;
+  margin: 1em auto;
   border: 1px solid grey;
+  float: left;
 }
 
 .catO {
@@ -119,19 +151,89 @@ h1 {
 }
 
 
+@media (max-width: 1100px) {
+
+  h1{
+    font-size: 0.4em;
+  }
+
+  h2{
+    font-size: 0.8em;
+  }
+
+  .boxes, #o_cat, #x_dog {
+    height: 150px;
+    width: 150px;
+  }
+
+  #gameArea {
+    margin: 2em auto;
+    width: 464px;
+    height: 464px;
+  }
+
+  .dogX, .catO  {
+    margin: 2em auto;
+    width: 460px;
+    height: 464px;
+  }
+
+  #boardArea{
+    width: 672px;
+    /*background-color: yellow;
+    height: 80px;*/
+  }
+
+  #scrX, #scrY {
+    width: 13%;
+    /*background-color: tomato;
+    height: 80px;*/
+  }
+
+  #scrX {
+     margin: 1.5em 1em 0 0;
+   }
+
+  #scrY {
+     margin: 1.5em 0 0 1em;
+  }
+
+}
+
+
 @media (max-width: 800px) {
 
   h1{
-    font-size: 0.8em;
+    font-size: 0.3em;
+  }
+
+  h2{
+    font-size: 0.3em;
   }
 
   .boxes, #o_cat, #x_dog {
     height: 100px;
     width: 100px;
   }
-  #gameArea, .dogX, .catO  {
-    margin: 0 auto;
+
+  #gameArea {
+    margin: 2em auto;
     width: 314px;
     height: 314px;
   }
+
+  .dogX, .catO  {
+    margin: 2em auto;
+    width: 312px;
+    height: 314px;
+  }
+
+  #boardArea{
+    width: 450px;
+  }
+
+  #scrX, #scrY {
+    width: 10%;
+  }
+
 }

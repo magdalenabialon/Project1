@@ -34,7 +34,7 @@ var getWinner = function(playerA,playerB) {
     return true;
   } else if ('x' === board[2] && 'x' === board[4] && 'x' === board[6]) {    // ^ winning diagonal
     return true;
-  } else if ('y' === board[0] && 'o' === board[1] && 'o' === board[2]) {
+  } else if ('o' === board[0] && 'o' === board[1] && 'o' === board[2]) {
     //console.log('Y won')
     return true;
   } else if ('o' === board[3] && 'o' === board[4] && 'o' === board[5]) {
