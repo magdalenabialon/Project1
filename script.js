@@ -126,6 +126,7 @@ function buttonClicked(event) {                     // when one of my boxes is c
   var scoreX = 0;
   var scoreO = 0;
 
+
   if ((getWinner() === true) && turn % 2 === 1) {      // determining if someone has won !
     console.log('x wooooooon!');
     scoreX++;
@@ -135,7 +136,6 @@ function buttonClicked(event) {                     // when one of my boxes is c
       $('#winScreen').addClass('dogX');
 
     board = [ '', '', '', '', '', '','', '', '' ];
-
 
 
   } else if ((getWinner() === true) && turn % 2  === 0) {
@@ -148,8 +148,10 @@ function buttonClicked(event) {                     // when one of my boxes is c
     board = [ '', '', '', '', '', '','', '', '' ];
     console.log('The "o" score is: ' + scoreO);
 
-  } else if(turn === 9){
-    console.log('its a tie')
+  } else if (turn === 9) {
+    console.log('its a tie');
+      $('#gameArea').hide();
+      $('#winScreen').addClass('itsTie');
     board = [ '', '', '', '', '', '','', '', '' ];
   }
 
