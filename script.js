@@ -70,10 +70,6 @@ var whoseTurn = 'x';                                // first turn goes to x!
 var player1 = 'x';
 var player2 = 'o';
 
-var turn = 0;
-
-// var scoreX = 0;       // ?? later on ??
-// var scoreO = 0;
 // var rounds = 0;
 
 
@@ -87,7 +83,7 @@ function buttonClicked(event) {                     // when one of my boxes is c
   if (!board[event.target.id]) {                    // if my board index is empty - player can choose where to put his turn
 
     var index = event.target.id;
-
+    var turn = 0;
 
     //console.log(typeof(index));
     //console.log('whose turn', whoseTurn);
@@ -97,38 +93,45 @@ function buttonClicked(event) {                     // when one of my boxes is c
       board[index] = 'x';
       //indexPlayer1.push(index);
       whoseTurn = 'o';
-      turn+=1;                                              // which turn it is :)
+      turn += 1;                                              // which turn it is :)
       console.log('x is at: ' + index);
-      console.log(turn);
+      console.log('the turn is: ' + turn);
     } else {
       //console.log('y turn');
       //board[event.target.id]
       board[index] = 'o';
       whoseTurn = 'x';
-      turn+=1;
+      turn += 2;
       console.log(turn);
       //board.indexPlayer2.push(index);
       console.log('o is at: ' + index);
+      console.log('the turn is: ' + turn);
     }
 
   } else {
     console.log('that squre is full');
   }
 
-
+var scoreX = 0;
+var scoreO = 0;
   if ((getWinner() === true) && turn % 2 === 1) {                        // determining if someone has won !
     console.log('x wooooooon!');
-    trun = 0;
+    scoreX++;
+    console.log(scoreX);
+    board = [ '', '', '', '', '', '','', '', '' ];
   } else if ((getWinner() === true) && turn % 2  === 0) {
     console.log('o wooooooon!')
-    trun = 0;
+    //trun = 0;
+    board = [ '', '', '', '', '', '','', '', '' ];
+    scoreO++;
   } else if(turn === 9){
     console.log('its a tie')
-    trun = 0;
+    console.log(scoreO);
+    board = [ '', '', '', '', '', '','', '', '' ];
   }
 
 
-  console.log(board)
+  console.log(board);
 
 }
 
