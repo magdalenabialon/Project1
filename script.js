@@ -3,7 +3,7 @@ console.log('TIC TAC TOE');
 
 //                    ****  THE BOARD  ****
 
-var board = [ ' ', ' ', ' ', ' ', ' ', ' ',' ', ' ', ' '];
+var board = [ '', '', '', '', '', '','', '', '' ];
 //console.log(board);
 
 
@@ -57,70 +57,90 @@ var getWinner = function(playerA,playerB) {
 
 };
 
-console.log(getWinner(player1,player2));
+//console.log(getWinner(player1,player2));
 
-
-
-
-//                    ****  DOM board  ****
-
-  var whoseTurn = 'x';
-
-$('.boxes').on('click', buttonClicked);
-
-
-function buttonClicked(event) {
-
-  console.log(event.target.id);
-  //board[event.target.id] = 'o'; // >>> !!! variable
-
-
-  var index = event.target.id;
-  console.log(index)
-  console.log(typeof(index));
-  console.log(event.target.id);
-
-  // var whoseTurn;
-  console.log('whose turn', whoseTurn);
-
-
-
-  if(whoseTurn === 'x'){
-    console.log('x turn');
-    //board[event.target.id]
-    // console.log('whose turn', whoseTurn);
-    board[index] = 'x';
-    //indexPlayer1.push(index);
-     whoseTurn = 'o';
-//    console.log('x is at: ' + index);
-  } else {
-    console.log('y turn');
-    board[event.target.id]
-    whoseTurn = 'x';
-    board[index] = 'o';
-    //board.indexPlayer2.push(index);
-//    console.log('o is at: ' + index);
-  }
-  console.log(board)
-}
 
 
 
 
 //                    ****  LETS PLAY ! :) ****
 
-// var scoreX = 0;       // ?? later on ??
-// var scoreO = 0;
-// var turn = 0;
-// var rounds = 0;
-
-
+var whoseTurn = 'x';                                // first turn goes to x!
 
 var player1 = 'x';
 var player2 = 'o';
 
-var indexPlayer1 = 1;           // player 1 each choice  -> connect with dom - html div for each square
-var indexPlayer2 = 4;           // player 2 each choice  -> connect with dom - html div for each square
+var turn = 0;
+
+// var scoreX = 0;       // ?? later on ??
+// var scoreO = 0;
+// var rounds = 0;
+
+
+$('.boxes').on('click', buttonClicked);
+
+
+function buttonClicked(event) {                     // when one of my boxes is clicked, this gonna happen:
+
+  console.log(event.target.id);
+                                                            // board[event.target.id] = 'o'; // >>> !!! variable
+  if (!board[event.target.id]) {                    // if my board index is empty - player can choose where to put his turn
+
+    var index = event.target.id;
+
+
+    //console.log(typeof(index));
+    //console.log('whose turn', whoseTurn);
+
+    if(whoseTurn === 'x') {
+      //console.log('x turn');
+      board[index] = 'x';
+      //indexPlayer1.push(index);
+      whoseTurn = 'o';
+      turn+=1;                                              // which turn it is :)
+      console.log('x is at: ' + index);
+      console.log(turn);
+    } else {
+      //console.log('y turn');
+      //board[event.target.id]
+      board[index] = 'o';
+      whoseTurn = 'x';
+      turn+=1;
+      console.log(turn);
+      //board.indexPlayer2.push(index);
+      console.log('o is at: ' + index);
+    }
+
+  } else {
+    console.log('that squre is full');
+  }
+
+
+  if ((getWinner() === true) && turn % 2 === 1) {                        // determining if someone has won !
+    console.log('x wooooooon!');
+    trun = 0;
+  } else if ((getWinner() === true) && turn % 2  === 0) {
+    console.log('o wooooooon!')
+    trun = 0;
+  } else if(turn === 9){
+    console.log('its a tie')
+    trun = 0;
+  }
+
+
+  console.log(board)
+
+}
+
+
+
+
+//                    ****  LETS PLAY - beginnings ****
+
+
+
+//var indexPlayer1 = 1;           // player 1 each choice  -> connect with dom - html div for each square
+//var indexPlayer2 = 4;           // player 2 each choice  -> connect with dom - html div for each square
 
 //var arrayPlayer1 = [];          //store player1 choices
 //var arrayPlayer2 = [];          //store player2 choices
@@ -148,5 +168,3 @@ var indexPlayer2 = 4;           // player 2 each choice  -> connect with dom - h
 
 // choosePosition(indexPlayer1, player1);
 // choosePosition(indexPlayer2, player2);
-
-console.log(board);
