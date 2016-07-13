@@ -77,7 +77,7 @@ var whoseTurn = 'x';                                // first turn goes to x!
 var player1 = 'x';
 var player2 = 'o';
 
-// var rounds = 0;
+var numberOfTurns = 0;
 
 
 $('.boxes').on('click', buttonClicked);
@@ -90,31 +90,32 @@ function buttonClicked(event) {                     // when one of my boxes is c
   if (!board[event.target.id]) {            // if my board index is empty - player can choose where to put his turn
 
     var index = event.target.id;
-    var turn = 0;
+    //var turn = 0;
                                                                 //console.log(typeof(index));
+
+
                                                                 //console.log('whose turn', whoseTurn);
     if(whoseTurn === 'x') {
                                                                 //console.log('x turn');
       board[index] = 'x';
                                                                             //indexPlayer1.push(index);
       whoseTurn = 'o';
-      turn += 1;                                      // which turn it is :)
+      numberOfTurns++;                                        // which turn it is :)
                                                                 //console.log('x is at: ' + index);
                                                                 //console.log('the turn is: ' + turn);
       $(event.target).attr( 'id', 'x_dog' );
 
 
-    } else {
+    } else if (whoseTurn === 'o'){
                                                               //console.log('y turn');
                                                               //board[event.target.id]
       board[index] = 'o';
       whoseTurn = 'x';
-      turn += 2;
+      numberOfTurns++;
                                                               //console.log(turn);
       $(event.target).attr( 'id', 'o_cat' );
 
                                                                   //board.indexPlayer2.push(index);
-
                                                               //console.log('o is at: ' + index);
     }
 
@@ -127,7 +128,7 @@ function buttonClicked(event) {                     // when one of my boxes is c
   var scoreO = 0;
 
 
-  if ((getWinner() === true) && turn % 2 === 1) {      // determining if someone has won !
+  if ((getWinner() === true) && (whoseTurn === 'o')) {      // determining if someone has won !
     console.log('x wooooooon!');
     scoreX++;
     console.log('The "x" score is: ' + scoreX);
@@ -138,7 +139,7 @@ function buttonClicked(event) {                     // when one of my boxes is c
     board = [ '', '', '', '', '', '','', '', '' ];
 
 
-  } else if ((getWinner() === true) && turn % 2  === 0) {
+  } else if ((getWinner() === true) && (whoseTurn === 'x')) {
     console.log('o wooooooon!');
     scoreO++;
                 //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
@@ -148,7 +149,7 @@ function buttonClicked(event) {                     // when one of my boxes is c
     board = [ '', '', '', '', '', '','', '', '' ];
     console.log('The "o" score is: ' + scoreO);
 
-  } else if (turn === 9) {
+  } else if (numberOfTurns === 9){
     console.log('its a tie');
       $('#gameArea').hide();
       $('#winScreen').addClass('itsTie');

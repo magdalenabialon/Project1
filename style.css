@@ -144,8 +144,8 @@ h3 {
 }
 
 .itsTie {
-  /*background-image: url("https://67.media.tumblr.com/93a63dbe615aa67e26d8eafe9589f223/tumblr_ndhura5VYt1sdxpjmo1_500.gif");*/
-  background-image: url("images/tie.png")
+  background-image: url("https://67.media.tumblr.com/93a63dbe615aa67e26d8eafe9589f223/tumblr_ndhura5VYt1sdxpjmo1_500.gif");
+  /*background-image: url("images/tie.png");*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -155,8 +155,9 @@ h3 {
   margin: 1em auto;
   border: 1px solid grey;
   float: left;
-
+  margin-top: 1.5em;
 }
+
 
 .dogX, .catO {
   background-repeat: no-repeat;
@@ -232,6 +233,11 @@ h3 {
      margin: 1.5em 0 0 1em;
   }
 
+  .itsTie {
+    width: 460px;
+    height: 470px;
+  }
+
 }
 
 
@@ -257,7 +263,10 @@ h3 {
     width: 50px;
   }
 
-
+  .itsTie {
+    width: 314px;
+    height: 314px;
+  }
 
   #gameArea {
     margin: 2em auto;
