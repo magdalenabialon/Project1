@@ -62,6 +62,20 @@ console.log(getWinner(player1,player2));
 
 
 
+//                    ****  DOM board  ****
+
+$('.boxes').on('click', buttonClicked);
+
+function buttonClicked(event) {
+  console.log($('.boxes')[1]);
+  console.log(event.target.id);
+  board[event.target.id] = "x"
+  console.log(board);
+}
+
+
+
+
 
 //                    ****  LETS PLAY ! :) ****
 
