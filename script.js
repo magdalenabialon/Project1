@@ -34,22 +34,22 @@ var getWinner = function(playerA,playerB) {
     return true;
   } else if ('x' === board[2] && 'x' === board[4] && 'x' === board[6]) {    // ^ winning diagonal
     return true;
-  } else if ('y' === board[0] && 'y' === board[1] && 'y' === board[2]) {
+  } else if ('y' === board[0] && 'o' === board[1] && 'o' === board[2]) {
     //console.log('Y won')
     return true;
-  } else if ('y' === board[3] && 'y' === board[4] && 'y' === board[5]) {
+  } else if ('o' === board[3] && 'o' === board[4] && 'o' === board[5]) {
     return true;
-  } else if ('y' === board[6] && 'y' === board[7] && 'y' === board[8]) {   // ^ winning rows
+  } else if ('o' === board[6] && 'o' === board[7] && 'o' === board[8]) {   // ^ winning rows
     return true;
-  } else if ('y' === board[0] && 'y' === board[3] && 'y' === board[6]) {
+  } else if ('o' === board[0] && 'o' === board[3] && 'o' === board[6]) {
     return true;
-  } else if ('y' === board[1] && 'y' === board[4] && 'y' === board[7]) {
+  } else if ('o' === board[1] && 'o' === board[4] && 'o' === board[7]) {
     return true;
-  } else if ('y' === board[2] && 'y' === board[5] && 'y' === board[8]) {    // ^ winning columns
+  } else if ('o' === board[2] && 'o' === board[5] && 'o' === board[8]) {    // ^ winning columns
     return true;
-  } else if ('y' === board[0] && 'y' === board[4] && 'y' === board[8]) {
+  } else if ('o' === board[0] && 'o' === board[4] && 'o' === board[8]) {
     return true;
-  } else if ('y' === board[2] && 'y' === board[4] && 'y' === board[6]) {    // ^ winning diagonal
+  } else if ('o' === board[2] && 'o' === board[4] && 'o' === board[6]) {    // ^ winning diagonal
     return true;
   } else {
     return false;
@@ -57,7 +57,14 @@ var getWinner = function(playerA,playerB) {
 
 };
 
-//console.log(getWinner(player1,player2));
+                                                                //console.log(getWinner(player1,player2));
+
+
+
+//                    ****  DOM / html ****
+
+// var dogX = document.getElementById('dogX');
+// var catO = document.getElementById('catO');
 
 
 
@@ -78,55 +85,71 @@ $('.boxes').on('click', buttonClicked);
 
 function buttonClicked(event) {                     // when one of my boxes is clicked, this gonna happen:
 
-  console.log(event.target.id);
-                                                            // board[event.target.id] = 'o'; // >>> !!! variable
-  if (!board[event.target.id]) {                    // if my board index is empty - player can choose where to put his turn
+                                                                //console.log(event.target.id);
+                                                                //board[event.target.id] = 'o'; // >>> !!! variable
+  if (!board[event.target.id]) {            // if my board index is empty - player can choose where to put his turn
 
     var index = event.target.id;
     var turn = 0;
-
-    //console.log(typeof(index));
-    //console.log('whose turn', whoseTurn);
-
+                                                                //console.log(typeof(index));
+                                                                //console.log('whose turn', whoseTurn);
     if(whoseTurn === 'x') {
-      //console.log('x turn');
+                                                                //console.log('x turn');
       board[index] = 'x';
-      //indexPlayer1.push(index);
+                                                                            //indexPlayer1.push(index);
       whoseTurn = 'o';
-      turn += 1;                                              // which turn it is :)
-      console.log('x is at: ' + index);
-      console.log('the turn is: ' + turn);
+      turn += 1;                                      // which turn it is :)
+                                                                //console.log('x is at: ' + index);
+                                                                //console.log('the turn is: ' + turn);
+      $(event.target).attr( 'id', 'x_dog' );
+
+
     } else {
-      //console.log('y turn');
-      //board[event.target.id]
+                                                              //console.log('y turn');
+                                                              //board[event.target.id]
       board[index] = 'o';
       whoseTurn = 'x';
       turn += 2;
-      console.log(turn);
-      //board.indexPlayer2.push(index);
-      console.log('o is at: ' + index);
-      console.log('the turn is: ' + turn);
+                                                              //console.log(turn);
+      $(event.target).attr( 'id', 'o_cat' );
+
+                                                                  //board.indexPlayer2.push(index);
+
+                                                              //console.log('o is at: ' + index);
     }
 
   } else {
     console.log('that squre is full');
   }
 
-var scoreX = 0;
-var scoreO = 0;
-  if ((getWinner() === true) && turn % 2 === 1) {                        // determining if someone has won !
+
+  var scoreX = 0;
+  var scoreO = 0;
+
+  if ((getWinner() === true) && turn % 2 === 1) {      // determining if someone has won !
     console.log('x wooooooon!');
     scoreX++;
-    console.log(scoreX);
+    console.log('The "x" score is: ' + scoreX);
+                  //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
+      //$('#gameArea').hide();
+      //$('#winScreen').addClass('dogX');
+
     board = [ '', '', '', '', '', '','', '', '' ];
+
+
+
   } else if ((getWinner() === true) && turn % 2  === 0) {
-    console.log('o wooooooon!')
-    //trun = 0;
-    board = [ '', '', '', '', '', '','', '', '' ];
+    console.log('o wooooooon!');
     scoreO++;
+                //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
+      $('#gameArea').hide();
+      $('#winScreen').addClass('catO');
+
+    board = [ '', '', '', '', '', '','', '', '' ];
+    console.log('The "o" score is: ' + scoreO);
+
   } else if(turn === 9){
     console.log('its a tie')
-    console.log(scoreO);
     board = [ '', '', '', '', '', '','', '', '' ];
   }
 
@@ -147,8 +170,6 @@ var scoreO = 0;
 
 //var arrayPlayer1 = [];          //store player1 choices
 //var arrayPlayer2 = [];          //store player2 choices
-
-
 
 
 // var choosePosition = function (index,player) {

@@ -18,8 +18,12 @@ body {
 
 
 #gameArea {
-  margin: auto;
-  width: 655px;
+  margin: 0 auto;
+  width: 631px;
+  height: 632px;
+  /*border: 0.1em solid #fff7cc;*/
+  border: 0.1em dashed #b8e2fc;
+
   /*height: 80%;*/
   /*background-color: yellow;*/
 }
@@ -57,24 +61,44 @@ h1 {
 
 
 #x_dog {
+  background-image: url("images/x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: inline-block;
-  width: 12%;
-  height: 12%;
+  width: 205px;
+  height: 205px;
 }
 
 #o_cat {
+  background-image: url("images/o_.jpg");
+  background-repeat: no-repeat;
   display: inline-block;
-  width: 10%;
-  height: 10%;
+  width: 205px;
+  height: 205px;
 }
 
-#dogX, #catO {
+.dogX, .catO {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: inline-block;
-  width: 640px;
-  height: 640px;
+  width: 631px;
+  height: 632px;
+  text-align: center;
+  margin: 0 auto;
 }
 
+.catO {
+  background-image: url("images/cat_o.jpg");
+}
 
+.dogX {
+  background-image: url("images/dog_x.jpg");
+}
+
+/*#winScreen{
+  display: none;
+}*/
 
 /*@media (max-width: 800px) {
 
