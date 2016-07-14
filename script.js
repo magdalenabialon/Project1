@@ -83,78 +83,64 @@ var numberOfTurns = 0;
 $('.boxes').on('click', buttonClicked);
 
 
-function buttonClicked(event) {                     // when one of my boxes is clicked, this gonna happen:
+function buttonClicked(event) {
 
-                                                                //console.log(event.target.id);
-                                                                //board[event.target.id] = 'o'; // >>> !!! variable
+
   if (!board[event.target.id]) {            // if my board index is empty - player can choose where to put his turn
 
+
     var index = event.target.id;
-    //var turn = 0;
-                                                                //console.log(typeof(index));
 
 
-                                                                //console.log('whose turn', whoseTurn);
     if(whoseTurn === 'x') {
-                                                                //console.log('x turn');
       board[index] = 'x';
-                                                                            //indexPlayer1.push(index);
       whoseTurn = 'o';
-      numberOfTurns++;                                        // which turn it is :)
-                                                                //console.log('x is at: ' + index);
-                                                                //console.log('the turn is: ' + turn);
+      numberOfTurns++;
       $(event.target).attr( 'id', 'x_dog' );
 
 
-    } else if (whoseTurn === 'o'){
-                                                              //console.log('y turn');
-                                                              //board[event.target.id]
+    } else if (whoseTurn === 'o') {
       board[index] = 'o';
       whoseTurn = 'x';
       numberOfTurns++;
-                                                              //console.log(turn);
       $(event.target).attr( 'id', 'o_cat' );
-
-                                                                  //board.indexPlayer2.push(index);
-                                                              //console.log('o is at: ' + index);
     }
+
 
   } else {
     console.log('that squre is full');
   }
 
 
-  var scoreX = 0;
-  var scoreO = 0;
+
+    var scoreX = 0;
+    var scoreO = 0;
 
 
-  if ((getWinner() === true) && (whoseTurn === 'o')) {      // determining if someone has won !
-    console.log('x wooooooon!');
-    scoreX++;
-    console.log('The "x" score is: ' + scoreX);
-                  //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
-      $('#gameArea').hide();
-      $('#winScreen').addClass('dogX');
+    if ((getWinner() === true) && (whoseTurn === 'o')) {
+      console.log('x wooooooon!');
+      scoreX++;
+      board = [ '', '', '', '', '', '','', '', '' ];
+      console.log('The "x" score is: ' + scoreX);
+        $('#gameArea').hide();
+        $('#winScreen').addClass('dogX');
+        //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
 
-    board = [ '', '', '', '', '', '','', '', '' ];
+    } else if ((getWinner() === true) && (whoseTurn === 'x')) {
+      console.log('o wooooooon!');
+      scoreO++;
+      board = [ '', '', '', '', '', '','', '', '' ];
+      console.log('The "o" score is: ' + scoreO);
+        $('#gameArea').hide();
+        $('#winScreen').addClass('catO');
+        //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
 
-
-  } else if ((getWinner() === true) && (whoseTurn === 'x')) {
-    console.log('o wooooooon!');
-    scoreO++;
-                //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
-      $('#gameArea').hide();
-      $('#winScreen').addClass('catO');
-
-    board = [ '', '', '', '', '', '','', '', '' ];
-    console.log('The "o" score is: ' + scoreO);
-
-  } else if (numberOfTurns === 9){
-    console.log('its a tie');
-      $('#gameArea').hide();
-      $('#winScreen').addClass('itsTie');
-    board = [ '', '', '', '', '', '','', '', '' ];
-  }
+    } else if (numberOfTurns === 9){
+      console.log('its a tie');
+        $('#gameArea').hide();
+        $('#winScreen').addClass('itsTie');
+      board = [ '', '', '', '', '', '','', '', '' ];
+    }
 
 
   console.log(board);
