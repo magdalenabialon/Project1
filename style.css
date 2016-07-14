@@ -125,7 +125,7 @@ h3 {
 }
 
 
-#x_dog {
+.x_dog {
   background-image: url("images/x.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -134,7 +134,7 @@ h3 {
   height: 205px;
 }
 
-#o_cat {
+.o_cat {
   background-image: url("images/o_.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -200,7 +200,7 @@ h3 {
     font-size: 0.5em;
   }
 
-  .boxes, #x_dog, #o_cat {
+  .boxes, .x_dog, .o_cat {
     height: 150px;
     width: 150px;
   }
@@ -262,7 +262,7 @@ h3 {
     word-spacing:1pt;
   }
 
-  .boxes, #x_dog, #o_cat {
+  .boxes, .x_dog, .o_cat {
     height: 100px;
     width: 100px;
   }

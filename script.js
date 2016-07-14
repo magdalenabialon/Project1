@@ -57,16 +57,6 @@ var getWinner = function(playerA,playerB) {
 
 };
 
-                                                                //console.log(getWinner(player1,player2));
-
-
-
-//                    ****  DOM / html ****
-
-// var dogX = document.getElementById('dogX');
-// var catO = document.getElementById('catO');
-
-
 
 
 
@@ -84,9 +74,9 @@ $('.boxes').on('click', buttonClicked);
 
 
 function buttonClicked(event) {
+console.log(!board[event.target.id]);
 
-
-  if (!board[event.target.id]) {            // if my board index is empty - player can choose where to put his turn
+  if (!board[event.target.id]) {                    // if my board index is empty - player can choose where to put his turn
 
 
     var index = event.target.id;
@@ -96,50 +86,67 @@ function buttonClicked(event) {
       board[index] = 'x';
       whoseTurn = 'o';
       numberOfTurns++;
-      $(event.target).attr( 'id', 'x_dog' );
+      $(event.target).addClass( 'x_dog' );
 
 
     } else if (whoseTurn === 'o') {
       board[index] = 'o';
       whoseTurn = 'x';
       numberOfTurns++;
-      $(event.target).attr( 'id', 'o_cat' );
+      $(event.target).addClass( 'o_cat' );
     }
 
 
   } else {
     console.log('that squre is full');
+    //$(event.target).attr( 'id', '');      ^^^^^666^^
   }
 
 
 
     var scoreX = 0;
     var scoreO = 0;
+    var scrX = document.getElementById('scoreX');
+    var scrO = document.getElementById('scoreY');
 
 
     if ((getWinner() === true) && (whoseTurn === 'o')) {
       console.log('x wooooooon!');
       scoreX++;
-      board = [ '', '', '', '', '', '','', '', '' ];
+      scrX.innerText = scoreX;
+      startNextGame();
+      // board = [ '', '', '', '', '', '','', '', '' ];
+      // numberOfTurns = 0;
       console.log('The "x" score is: ' + scoreX);
         $('#gameArea').hide();
+        $('#winScreen').removeClass('catO');
         $('#winScreen').addClass('dogX');
+        $('#winScreen').show();
         //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
 
     } else if ((getWinner() === true) && (whoseTurn === 'x')) {
       console.log('o wooooooon!');
       scoreO++;
-      board = [ '', '', '', '', '', '','', '', '' ];
+      scrO.innerText = scoreO;
+      startNextGame();
+      // board = [ '', '', '', '', '', '','', '', '' ];
+      // numberOfTurns = 0;
       console.log('The "o" score is: ' + scoreO);
-        $('#gameArea').hide();
+        $('#winScreen').removeClass('dogX');
         $('#winScreen').addClass('catO');
+        $('#gameArea').hide();
+        $('#winScreen').show();
         //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
 
-    } else if (numberOfTurns === 9){
+    } else if (numberOfTurns === 9) {
       console.log('its a tie');
         $('#gameArea').hide();
+        $('#winScreen').removeClass('dogX');
+        $('#winScreen').removeClass('catO');
         $('#winScreen').addClass('itsTie');
-      board = [ '', '', '', '', '', '','', '', '' ];
+        $('#winScreen').show();
+        startNextGame();
+        //board = [ '', '', '', '', '', '','', '', '' ];
     }
 
 
@@ -149,35 +156,19 @@ function buttonClicked(event) {
 
 
 
+var newGame = function(){
+  board = [ '', '', '', '', '', '','', '', '' ];
+  whoseTurn = 'x';
+  numberOfTurns = 0;
+  $('#winScreen').hide();
+  $('#gameArea').show();
+  $('.boxes').removeClass( 'o_cat' );
+  $('.boxes').removeClass( 'x_dog' );
+  $('.boxes').removeClass( 'itsTie' );
+  // $('.boxes').addClass( '.boxes' );
 
-//                    ****  LETS PLAY - beginnings ****
+}
 
-
-
-//var indexPlayer1 = 1;           // player 1 each choice  -> connect with dom - html div for each square
-//var indexPlayer2 = 4;           // player 2 each choice  -> connect with dom - html div for each square
-
-//var arrayPlayer1 = [];          //store player1 choices
-//var arrayPlayer2 = [];          //store player2 choices
-
-
-// var choosePosition = function (index,player) {
-//
-//   var arrayPlayer = [];                                        //store players choices
-//
-//     for (var round = 0; round < board.length; round++) {
-//       board[index] = player;                                   //set my board position
-//         if (board[index] === 'x') {
-//           arrayPlayer.push(index);
-//           console.log(arrayPlayer);
-//           console.log('x is at: ' + index);                             //push the choice to the  arrayPlayer
-//         } else if (board[index] === 'o') {
-//           arrayPlayer.push(index);
-//           console.log(arrayPlayer);
-//           console.log('y is at: ' + index);
-//         }
-//     }
-// }
-
-// choosePosition(indexPlayer1, player1);
-// choosePosition(indexPlayer2, player2);
+var startNextGame = function(){
+  setTimeout(newGame, 3000);
+}
