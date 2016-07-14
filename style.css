@@ -72,15 +72,19 @@ span {
   font-family: 'Indie Flower', cursive;
 }
 
+h1 {
+    color: #05EDFF;
+    font-family: 'Quicksand', sans-serif;
+}
+
 h2 {
   color: #bdbdbd;
   /*text-shadow:1px -1px 2px #B8860B;*/
-  font-weight:200;
-  letter-spacing:2pt;
-  word-spacing:5pt;
-  /*font-size:1em;*/
-  font-size:0.1em;
-  font-family:helvetica, sans-serif;
+  font-weight: 200;
+  letter-spacing: 2pt;
+  word-spacing: 5pt;
+  font-size: 1em;
+  font-family: helvetica, sans-serif;
   margin: 1em auto;
   /*padding: 0.5em;
   margin-top: 3em;*/
@@ -89,8 +93,8 @@ h2 {
 h3 {
   font-size: 0.7em;
   color: #05EDFF;
-  letter-spacing:2pt;
-  word-spacing:5pt;
+  letter-spacing: 2pt;
+  word-spacing: 5pt;
   /*font-family:helvetica, sans-serif;*/
   /*font-family: 'Indie Flower', cursive;*/
   font-family: 'Quicksand', sans-serif;
@@ -166,10 +170,6 @@ h3 {
 
 
 @media (max-width: 1100px) {
-  /*h1 {
-    font-size: 0.4em;
-    color: #05EDFF;
-  }*/
 
   h2 {
     font-size: 0.8em;
