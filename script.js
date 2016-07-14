@@ -8,7 +8,6 @@ var board = [ '', '', '', '', '', '','', '', '' ];
 
 
 
-
 //                    ****  WHO IS THE WINNER ****
 
 player1 = 'x';
@@ -77,34 +76,28 @@ $('.boxes').on('click', buttonClicked);
 
 
 function buttonClicked(event) {
-console.log(!board[event.target.id]);
 
-  if (!board[event.target.id]) {                    // if my board index is empty - player can choose where to put his turn
 
+  if (!board[event.target.id]) {                     // if my board index is empty - player can choose where to put his turn
 
     var index = event.target.id;
-
 
     if(whoseTurn === 'x') {
       board[index] = 'x';
       whoseTurn = 'o';
       numberOfTurns++;
-      $(event.target).addClass( 'x_dog' );
-
-
+      $(event.target).addClass('x_dog');
     } else if (whoseTurn === 'o') {
       board[index] = 'o';
       whoseTurn = 'x';
       numberOfTurns++;
-      $(event.target).addClass( 'o_cat' );
+      $(event.target).addClass('o_cat');
     }
-
 
   } else {
     console.log('that squre is full');
 
   }
-
 
 
     var scrX = document.getElementById('scoreX');
@@ -117,23 +110,16 @@ console.log(!board[event.target.id]);
       scrX.innerText = scoreX;
       console.log('The "x" score is: ' + scoreX);
       startNextGame();
+      $('#gameArea').hide();
+      $('#winScreen').show();
+      $('#winScreen').removeClass('catO');
+      $('#winScreen').removeClass('catOx3wins');
+      $('#winScreen').removeClass('dogXx3wins');
+      $('#winScreen').addClass('dogX');
 
-
-        $('#gameArea').hide();
-        $('#winScreen').show();
-        $('#winScreen').removeClass('catO');
-        $('#winScreen').removeClass('catOx3wins');
-        $('#winScreen').removeClass('dogXx3wins');
-
-        $('#winScreen').addClass('dogX');
-
-
-        if (scoreX >= 3) {
-          $('#winScreen').addClass('dogXx3wins');
-        }
-        // else if (scoreO >= 3) {
-        //   $('#winScreen').addClass('catOx3wins');
-        // }
+      if (scoreX >= 3) {
+        $('#winScreen').addClass('dogXx3wins');
+      }
 
 
     } else if ((getWinner() === true) && (whoseTurn === 'x')) {
@@ -142,51 +128,30 @@ console.log(!board[event.target.id]);
       scrO.innerText = scoreO;
       console.log('The "o" score is: ' + scoreO);
       startNextGame();
+      $('#gameArea').hide();
+      $('#winScreen').show();
+      $('#winScreen').removeClass('dogX');
+      $('#winScreen').removeClass('dogXx3wins');
+      $('#winScreen').removeClass('catOx3wins');
+      $('#winScreen').addClass('catO');
 
-        $('#gameArea').hide();
-        $('#winScreen').show();
-        $('#winScreen').removeClass('dogX');
+      if (scoreO >= 3) {
         $('#winScreen').removeClass('dogXx3wins');
-        $('#winScreen').removeClass('catOx3wins');
-
-        $('#winScreen').addClass('catO');
-
-
-
-        if (scoreO >= 3) {
-          $('#winScreen').removeClass('dogXx3wins');
-          $('#winScreen').addClass('catOx3wins');
-        }
-        // else if (scoreX >= 3) {
-        //   $('#winScreen').addClass('dogXx3wins');
-        // }
+        $('#winScreen').addClass('catOx3wins');
+      }
 
 
     } else if (numberOfTurns === 9) {
       console.log('its a tie');
       startNextGame();
-
-
-        $('#gameArea').hide();
-        $('#winScreen').show();
-        $('#winScreen').removeClass('dogX');
-        $('#winScreen').removeClass('catO');
-        $('#winScreen').removeClass('dogXx3wins');
-        $('#winScreen').removeClass('catOx3wins');
-        $('#winScreen').addClass('itsTie');
-
-
-
-        // if (scoreO >= 3) {
-        //   $('#winScreen').addClass('catOx3wins');
-        // }
-        // else if (scoreX >= 3) {
-        //   $('#winScreen').addClass('catOx3wins');
-        // }
-
-
+      $('#gameArea').hide();
+      $('#winScreen').show();
+      $('#winScreen').removeClass('dogX');
+      $('#winScreen').removeClass('catO');
+      $('#winScreen').removeClass('dogXx3wins');
+      $('#winScreen').removeClass('catOx3wins');
+      $('#winScreen').addClass('itsTie');
     }
-
 
   console.log(board);
 
@@ -194,29 +159,18 @@ console.log(!board[event.target.id]);
 
 
 
-
 var newGame = function() {
   board = [ '', '', '', '', '', '','', '', '' ];
   whoseTurn = 'x';
   numberOfTurns = 0;
-
   $('#winScreen').hide();
   $('#gameArea').show();
-  $('.boxes').removeClass( 'o_cat' );
-  $('.boxes').removeClass( 'x_dog' );
-  $('.boxes').removeClass( 'itsTie' );
-  // $('.boxes').addClass( '.boxes' );
-
-  // if (scoreO >= 3) {
-  //   $('#winScreen').addClass('catOx3wins');
-  // }
-  // else if (scoreX >= 3) {
-  //   $('#winScreen').addClass('catOx3wins');
-  // }
-
+  $('.boxes').removeClass('o_cat');
+  $('.boxes').removeClass('x_dog');
+  $('.boxes').removeClass('itsTie');
 }
 
 
 var startNextGame = function(){
-  setTimeout(newGame, 1000);
+  setTimeout(newGame, 2000);
 }

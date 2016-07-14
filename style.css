@@ -6,12 +6,6 @@ body {
   /*background-color: #ececec; #f9f9f9 #F5FFFA;*/
 }
 
-/*    ****  STARTING WITH APPLYING RULES FOR SMALL SCREENS*****    */
-
-/*#scrX, #scrY, #boardArea{
-  float: left;
-}*/
-
 #scrX, #scrY {
    width: 20%;
    padding: 0;
@@ -19,7 +13,6 @@ body {
    display: inline-block;
    float: left;
    margin: 0 auto;
-   /*overflow: hidden;*/
 }
 
 #scrX {
@@ -29,7 +22,6 @@ body {
 #scrY {
    margin: 0 0 0 5px;
 }
-
 
 #gameArea {
   margin: 1.3em auto;
@@ -60,7 +52,6 @@ body {
   width: 205px;
   height: 205px;
   transition: .5s;
-
   border: 1px solid #d3d3d3;
   display: inline-block;
   /*float: left;*/
@@ -105,7 +96,6 @@ h3 {
   font-family: 'Quicksand', sans-serif;
 }
 
-
 .x_dog {
   background-image: url("images/x.jpg");
   background-repeat: no-repeat;
@@ -144,7 +134,6 @@ h3 {
   margin-top: 1.5em;
 }
 
-
 .dogX, .catO {
   background-repeat: no-repeat;
   background-size: cover;
@@ -175,8 +164,8 @@ h3 {
   height: 627px;
 }
 
-@media (max-width: 1100px) {
 
+@media (max-width: 1100px) {
   /*h1 {
     font-size: 0.4em;
     color: #05EDFF;
@@ -195,7 +184,7 @@ h3 {
     width: 150px;
   }
 
-  .logo{
+  .logo {
     height: 100px;
     width: 95px;
   }
@@ -207,13 +196,13 @@ h3 {
 
   }
 
-  .dogX, .catO  {
+  .dogX, .catO {
     margin: 2em auto;
     width: 460px;
     height: 464px;
   }
 
-  #boardArea{
+  #boardArea {
     width: 672px;
     /*background-color: yellow;
     height: 80px;*/
@@ -237,12 +226,10 @@ h3 {
     width: 460px;
     height: 470px;
   }
-
 }
 
 
 @media (max-width: 800px) {
-
   /*h1 {
     font-size: 0.4em;
   }*/
@@ -276,21 +263,19 @@ h3 {
     height: 80px;*/
   }
 
-  .dogX, .catO  {
+  .dogX, .catO {
     margin: 2em auto;
     width: 312px;
     height: 314px;
   }
 
-  #boardArea{
+  #boardArea {
     width: 453px;
     /*background-color: tomato;
     height: 80px;*/
-
   }
 
   #scrX, #scrY {
     width: 10%;
   }
-
 }
