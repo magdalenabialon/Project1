@@ -14,6 +14,9 @@ var board = [ '', '', '', '', '', '','', '', '' ];
 player1 = 'x';
 player2 = 'o';
 
+var scoreX = 0;
+var scoreO = 0;
+
 
 var getWinner = function(playerA,playerB) {
 
@@ -104,8 +107,7 @@ console.log(!board[event.target.id]);
 
 
 
-    var scoreX = 0;
-    var scoreO = 0;
+
     var scrX = document.getElementById('scoreX');
     var scrO = document.getElementById('scoreY');
 
@@ -115,28 +117,24 @@ console.log(!board[event.target.id]);
       scoreX++;
       scrX.innerText = scoreX;
       startNextGame();
-      // board = [ '', '', '', '', '', '','', '', '' ];
-      // numberOfTurns = 0;
       console.log('The "x" score is: ' + scoreX);
         $('#gameArea').hide();
         $('#winScreen').removeClass('catO');
         $('#winScreen').addClass('dogX');
         $('#winScreen').show();
-        //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
+
 
     } else if ((getWinner() === true) && (whoseTurn === 'x')) {
       console.log('o wooooooon!');
       scoreO++;
       scrO.innerText = scoreO;
       startNextGame();
-      // board = [ '', '', '', '', '', '','', '', '' ];
-      // numberOfTurns = 0;
       console.log('The "o" score is: ' + scoreO);
         $('#winScreen').removeClass('dogX');
         $('#winScreen').addClass('catO');
         $('#gameArea').hide();
         $('#winScreen').show();
-        //$(event.target).attr( 'id', '0' );    >>>>>>> reset when new game
+
 
     } else if (numberOfTurns === 9) {
       console.log('its a tie');
@@ -146,7 +144,6 @@ console.log(!board[event.target.id]);
         $('#winScreen').addClass('itsTie');
         $('#winScreen').show();
         startNextGame();
-        //board = [ '', '', '', '', '', '','', '', '' ];
     }
 
 
@@ -156,16 +153,25 @@ console.log(!board[event.target.id]);
 
 
 
-var newGame = function(){
+var newGame = function() {
   board = [ '', '', '', '', '', '','', '', '' ];
   whoseTurn = 'x';
   numberOfTurns = 0;
+  // scoreO++;
+  // scoreY++;
   $('#winScreen').hide();
   $('#gameArea').show();
   $('.boxes').removeClass( 'o_cat' );
   $('.boxes').removeClass( 'x_dog' );
   $('.boxes').removeClass( 'itsTie' );
   // $('.boxes').addClass( '.boxes' );
+
+  if (scoreO >= 3) {
+    //stuff
+  }
+  // else if (scoreX >= 3) {
+  //   //other stuff
+  // }
 
 }
 
