@@ -176,5 +176,5 @@ var newGame = function() {
 
 
 var startNextGame = function(){
-  setTimeout(newGame, 3000);
+  setTimeout(newGame, 1000);
 }
