@@ -102,9 +102,8 @@ console.log(!board[event.target.id]);
 
   } else {
     console.log('that squre is full');
-    //$(event.target).attr( 'id', '');      ^^^^^666^^
-  }
 
+  }
 
 
 
@@ -153,12 +152,12 @@ console.log(!board[event.target.id]);
 
 
 
+
 var newGame = function() {
   board = [ '', '', '', '', '', '','', '', '' ];
   whoseTurn = 'x';
   numberOfTurns = 0;
-  // scoreO++;
-  // scoreY++;
+
   $('#winScreen').hide();
   $('#gameArea').show();
   $('.boxes').removeClass( 'o_cat' );
@@ -167,13 +166,14 @@ var newGame = function() {
   // $('.boxes').addClass( '.boxes' );
 
   if (scoreO >= 3) {
-    //stuff
+    $('#winScreen').addClass('catOx3wins');
   }
-  // else if (scoreX >= 3) {
-  //   //other stuff
-  // }
+  else if (scoreX >= 3) {
+    $('#winScreen').addClass('catOx3wins');
+  }
 
 }
+
 
 var startNextGame = function(){
   setTimeout(newGame, 3000);
