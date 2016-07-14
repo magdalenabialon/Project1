@@ -33,3 +33,5 @@ htms, css, javascript, jQuery, git, GitHub
 - there is a level up prize for triple winner
 - yes..., even tie wins something
 - enjoy! 
+
+![](http://www.funnydogsite.com/pictures/Cool_Hipster_Dog.jpg)
