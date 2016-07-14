@@ -3,7 +3,7 @@
 ##Tic Tac Toe
 
 Technologies used:
-- htms, css, javascript, jQuery, git, GitHub
+htms, css, javascript, jQuery, git, GitHub
 
 ##Workflow:
 
