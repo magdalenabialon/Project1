@@ -168,10 +168,13 @@ console.log(!board[event.target.id]);
 
 
         $('#gameArea').hide();
+        $('#winScreen').show();
         $('#winScreen').removeClass('dogX');
         $('#winScreen').removeClass('catO');
+        $('#winScreen').removeClass('dogXx3wins');
+        $('#winScreen').removeClass('catOx3wins');
         $('#winScreen').addClass('itsTie');
-        $('#winScreen').show();
+
 
 
         // if (scoreO >= 3) {
