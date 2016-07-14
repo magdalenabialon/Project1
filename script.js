@@ -65,11 +65,8 @@ var getWinner = function(playerA,playerB) {
 //                    ****  LETS PLAY ! :) ****
 
 var whoseTurn = 'x';                                // first turn goes to x!
-
-var player1 = 'x';
-var player2 = 'o';
-
 var numberOfTurns = 0;
+
 
 
 $('.boxes').on('click', buttonClicked);
