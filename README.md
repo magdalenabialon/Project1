@@ -7,22 +7,22 @@ Technologies used:
 
 ##Workflow:
 
-- 1) Created an empty board
-- 2) Determined winning combinnations
-- 3) Manually given x and o into the game
-- 4) Builded DOM, added basic stale & images
-- 5) connected DOM with java script & jQuery
-- 6) Started working on the main function: onClick
+- 1 Created an empty board
+- 2 Determined winning combinnations
+- 3 Manually given x and o into the game
+- 4 Builded DOM, added basic stale & images
+- 5 connected DOM with java script & jQuery
+- 6 Started working on the main function: onClick
     - determine whose turn it is
     - pushing the choice into an array
     - detemining the winner (x, o) or tie
     - making sure box can't be chosen twice
     - tracking scores
-- 7) added images for x, o and big ones when someone won or there is a tie
-- 8) Working on the style: 1 main board and 2 score boards, adding size to all elements
-- 9) Starting new game after set out time : 3sec
-- 10) Game twist: different images if score >=3;
-- 11) Players can choose their turns :)
+- 7 added images for x, o and big ones when someone won or there is a tie
+- 8 Working on the style: 1 main board and 2 score boards, adding size to all elements
+- 9 Starting new game after set out time : 3sec
+- 10 Game twist: different images if score >=3;
+- 11 Players can choose their turns :)
 
 
 ##Instructions: Hey! its just a tic tac toe... :)
