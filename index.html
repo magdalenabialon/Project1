@@ -10,16 +10,27 @@
 </head>
 <body>
 
+  <div class = "landing">
+  <div class = "landing-box">
+    <input type = "text" class = "nameInput" id = "player1name" maxlength = "9" placeholder = "player 1"> <br>
+    <input type = "text" class = "nameInput" id="player2name" maxlength = "9" placeholder = "player 2"> <br>
+    <button class = "landingButtonSubmit">submit</button>
+    <button class = "landingButtonSkip">skip</button>
+  </div>
+  </div>
 
-  <div id="boardArea">
 
-    <div id="scrX">
-      <img class="logo"src="images/x.jpg" alt="x">
+  <div id = "boardArea">
+
+    <div id = "scrX">
+      <img class = "logo" src = "images/x.jpg" alt = "x">
       <h2>score</h2>
-      <h1 id ="scoreX"> X </h1>
+      <h1 id = "scoreX"> X </h1>
+      <h3 class = "player1" id = "p1name">playerX</h3>
     </div>
 
-    <div id="gameArea">
+
+    <div id = "gameArea">
       <div id = "0" class = "boxes"></div>
       <div id = "1" class = "boxes"></div>
       <div id = "2" class = "boxes"></div>
@@ -31,15 +42,18 @@
       <div id = "8" class = "boxes"></div>
     </div>
 
-    <div id="winScreen"></div>
 
-    <div id="scrY">
-      <img class="logo" src="images/o.jpg" alt="o">
+    <div id = "winScreen"></div>
+
+
+    <div id = "scrY">
+      <img class = "logo" src = "images/o.jpg" alt = "o">
       <h2>score</h2>
-      <h1 id ="scoreY"> O </h1>
+      <h1 id = "scoreY"> O </h1>
+      <h3 class = "player2" id = "p2name">playerO</h3>
     </div>
 
-    <div id="clear"></div>
+    <div id = "clear"></div>
 
     <h3><span>TIC TAC TOE</span> | ©2016 | Magdalena Bialon | GA Melbourne</h3>
 
