@@ -115,34 +115,73 @@ console.log(!board[event.target.id]);
       console.log('x wooooooon!');
       scoreX++;
       scrX.innerText = scoreX;
-      startNextGame();
       console.log('The "x" score is: ' + scoreX);
+      startNextGame();
+
+
         $('#gameArea').hide();
-        $('#winScreen').removeClass('catO');
-        $('#winScreen').addClass('dogX');
         $('#winScreen').show();
+        $('#winScreen').removeClass('catO');
+        $('#winScreen').removeClass('catOx3wins');
+        $('#winScreen').removeClass('dogXx3wins');
+
+        $('#winScreen').addClass('dogX');
+
+
+        if (scoreX >= 3) {
+          $('#winScreen').addClass('dogXx3wins');
+        }
+        // else if (scoreO >= 3) {
+        //   $('#winScreen').addClass('catOx3wins');
+        // }
 
 
     } else if ((getWinner() === true) && (whoseTurn === 'x')) {
       console.log('o wooooooon!');
       scoreO++;
       scrO.innerText = scoreO;
-      startNextGame();
       console.log('The "o" score is: ' + scoreO);
-        $('#winScreen').removeClass('dogX');
-        $('#winScreen').addClass('catO');
+      startNextGame();
+
         $('#gameArea').hide();
         $('#winScreen').show();
+        $('#winScreen').removeClass('dogX');
+        $('#winScreen').removeClass('dogXx3wins');
+        $('#winScreen').removeClass('catOx3wins');
+
+        $('#winScreen').addClass('catO');
+
+
+
+        if (scoreO >= 3) {
+          $('#winScreen').removeClass('dogXx3wins');
+          $('#winScreen').addClass('catOx3wins');
+        }
+        // else if (scoreX >= 3) {
+        //   $('#winScreen').addClass('dogXx3wins');
+        // }
 
 
     } else if (numberOfTurns === 9) {
       console.log('its a tie');
+      startNextGame();
+
+
         $('#gameArea').hide();
         $('#winScreen').removeClass('dogX');
         $('#winScreen').removeClass('catO');
         $('#winScreen').addClass('itsTie');
         $('#winScreen').show();
-        startNextGame();
+
+
+        // if (scoreO >= 3) {
+        //   $('#winScreen').addClass('catOx3wins');
+        // }
+        // else if (scoreX >= 3) {
+        //   $('#winScreen').addClass('catOx3wins');
+        // }
+
+
     }
 
 
@@ -165,12 +204,12 @@ var newGame = function() {
   $('.boxes').removeClass( 'itsTie' );
   // $('.boxes').addClass( '.boxes' );
 
-  if (scoreO >= 3) {
-    $('#winScreen').addClass('catOx3wins');
-  }
-  else if (scoreX >= 3) {
-    $('#winScreen').addClass('catOx3wins');
-  }
+  // if (scoreO >= 3) {
+  //   $('#winScreen').addClass('catOx3wins');
+  // }
+  // else if (scoreX >= 3) {
+  //   $('#winScreen').addClass('catOx3wins');
+  // }
 
 }
 
