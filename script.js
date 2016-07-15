@@ -8,6 +8,35 @@ var board = [ '', '', '', '', '', '','', '', '' ];
 
 
 
+//                    ****  STARTING BANNER  ****
+
+var gameScreen = function() {                         // hide banner when skip/submitted
+  $('.initialBannerBox').css('display', 'none');
+};
+
+
+var startGame = function() {
+
+  if ($('#player1name').val() !== "" &&  $('#player2name').val() !== "") {
+    var player1name = $('#player1name').val();
+    $('#p1name').html(player1name);
+    var player2name = $('#player2name').val();
+    $('#p2name').html(player2name);
+  } else {
+    $('.nameInput').css({'background-color': 'rgba(255,215,0,0.8)'});
+    $('.nameInput').addClass('animated flip');
+    return;
+  }
+
+  gameScreen();
+};
+
+$('#subm').on('click', startGame);
+$('#skip').on('click', gameScreen);
+
+
+
+
 //                    ****  WHO IS THE WINNER ****
 
 player1 = 'x';
