@@ -183,6 +183,14 @@ h3 {
   font-family: "Quicksand", sans-serif;
 }
 
+h4 {
+  font-size: 0.7em;
+  color: #05EDFF;
+  letter-spacing: 2pt;
+  word-spacing: 5pt;
+  font-family: "Quicksand", sans-serif;
+}
+
 .x_dog {
   background-image: url("images/x.jpg");
   background-repeat: no-repeat;
@@ -297,8 +305,12 @@ h3 {
     font-size: 0.8em;
   }
 
-  h3 {
+  h3, h4 {
     font-size: 0.5em;
+  }
+
+  h4 {
+    font-size: 0.4em;
   }
 
   .boxes, .x_dog, .o_cat {
@@ -391,11 +403,7 @@ h3 {
     max-width: 45px;
   }
 
-  /*h1 {
-    font-size: 0.4em;
-  }*/
-
-  h2, h3 {
+  h2, h3, h4 {
     font-size: 0.1em;
     letter-spacing:1pt;
     word-spacing:1pt;
