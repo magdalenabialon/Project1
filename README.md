@@ -26,7 +26,7 @@ htms, css, javascript, jQuery, GitHub
 - 11 Players can choose their turns :)
 
 
-##Instructions: Hey! its just a tic tac toe... :)
+##Instructions: Hey! its just a tic tac toe so let's not overthink it... :)
 - x starts
 - chose better than the previous player
 - there is a prize for the winner
