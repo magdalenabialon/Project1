@@ -8,9 +8,13 @@ var board = [ '', '', '', '', '', '','', '', '' ];
 
 
 
+
 //                    ****  STARTING BANNER  ****
 
-var gameScreen = function() {                               // hide banner when skip/submitted
+var screenOn = true;                                    // to disable choosing boxes when banner is on
+
+var gameScreen = function() {
+  screenOn = false;
   $('.initialBannerBox').css('display', 'none');
 };
 
@@ -102,7 +106,9 @@ $('.boxes').on('click', buttonClicked);
 
 
 function buttonClicked(event) {
-
+  if (screenOn) {
+    return;
+  }
 
   if (!board[event.target.id]) {                     // if my board index is empty - player can choose where to put his turn
 
