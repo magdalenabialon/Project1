@@ -10,7 +10,7 @@ var board = [ '', '', '', '', '', '','', '', '' ];
 
 //                    ****  STARTING BANNER  ****
 
-var gameScreen = function() {                         // hide banner when skip/submitted
+var gameScreen = function() {                               // hide banner when skip/submitted
   $('.initialBannerBox').css('display', 'none');
 };
 
