@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-##Tic Tac Toe || Play it [online](https://magdalenabialon.github.io/TicTacToe/)
+##Play it [online](https://magdalenabialon.github.io/TicTacToe/)
 ![](https://raw.githubusercontent.com/flextry/Tic-Tac-Toe-RestAPI/master/images/TicTacToe-photo-logo.jpg?token=3677691__eyJzY29wZSI6IlJhd0Jsb2I6ZmxleHRyeS9UaWMtVGFjLVRvZS1SZXN0QVBJL21hc3Rlci9pbWFnZXMvVGljVGFjVG9lLXBob3RvLWxvZ28uanBnIiwiZXhwaXJlcyI6MTQxMjI3NzEyOX0%3D--2d0753cce00814897532f951d557f0996874b697)
 
 Technologies used:
